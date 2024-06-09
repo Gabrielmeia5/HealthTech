@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #14151a;
+  color: aliceblue;
+}
+
+button {
+  padding: 0.8em 1.8em;
+  border: 2px solid #3bb8c1;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #3bb8c1;
+}
+
+button::before {
+  content: "";
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(35deg);
+  background: #3bb8c1;
+  transition: 0.3s ease;
+  display: block;
+  z-index: -1;
+}
+
+button:hover::before {
+  width: 105%;
+}
+
+button:hover {
+  color: #111;
+}
+
+button:hover::before {
+  filter: blur(15px);
+}
+
+.hiddenRtoL {
+  opacity: 0;
+  filter: blur(15px);
+  transform: translateX(100%);
+  transition: all 1s;
+}
+
+.showRtoL {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+  transition: all 1s;
+}
+
+.hiddenLtoR {
+  opacity: 0;
+  filter: blur(15px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.showLtoR {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+  transition: all 1s;
+}
+
+.hiddenBtoT {
+  opacity: 0;
+  filter: blur(15px);
+  transform: translateY(100%);
+  transition: all 1s;
+}
+
+.showBtoT {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
+  transition: all 1s;
+}
+
+.hiddenTtoB {
+  opacity: 0;
+  filter: blur(15px);
+  transform: translateY(-100%);
+  transition: all 1s;
+}
+
+.showTtoB {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
+  transition: all 1s;
+}
+
+.depositions :nth-child(2) {
+  transition-delay: 400ms;
+}
+
+.depositions :nth-child(3) {
+  transition-delay: 700ms;
+}
